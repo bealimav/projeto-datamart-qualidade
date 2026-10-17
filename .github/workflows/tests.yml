@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    # A MÁGICA ESTÁ AQUI: Variáveis para o boto3 inicializar sem erro
     env:
       AWS_DEFAULT_REGION: us-east-1
       AWS_ACCESS_KEY_ID: "test"
