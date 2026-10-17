@@ -9,6 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    # A MÁGICA ESTÁ AQUI: Variáveis para o boto3 inicializar sem erro
+    env:
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: "test"
+      AWS_SECRET_ACCESS_KEY: "test"
 
     steps:
     - name: Checkout do código
@@ -26,5 +32,4 @@ jobs:
 
     - name: Rodar testes unitários
       run: |
-        export PYTHONPATH=$PWD
-        pytest tests/ -v
+        python -m pytest tests/ -v
